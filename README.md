@@ -142,35 +142,6 @@ export default createStore({
 
 ```
 
-使用
-```html
-<template>
-  <div>
-    <van-button type="danger" @click="handleBtn">vuex按钮</van-button>
-  </div>
-</template>
-<script>
-import { computed, ref } from 'vue'
-import { useStore } from 'vuex'
-import { getUser } from './../api/home'
-export default {
-  setup () {
-    const msg = ref('vue3.0全家桶+vant+axios+rem')
-    const store = useStore()
-    const name = computed(() => store.state.userNmae)
-    const handleBtn = () =>{
-      store.commit('getUserNmae', 'Vue')
-    }
-    return {
-      msg,
-      name,
-      handleBtn
-    }
-  }
-}
-</script>
-
-```
 
 ### ✅ 配置多环境变量
 

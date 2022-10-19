@@ -13,20 +13,17 @@
 
 <script>
 import { computed, ref } from 'vue'
-import { useStore } from 'vuex'
 import { getUser } from './../api/home'
 export default {
-  setup () {
+  setup() {
     const msg = ref('vue3.0全家桶+vant+axios+rem')
     const list = ref([])
-    const store = useStore()
+
     getUser().then((res) => {
-      console.log(res,'re');
+      console.log(res, 're');
       list.value = res
     })
-    const name = computed(() => store.state.userNmae)
-    const handleBtn = () =>{
-      store.commit('getUserNmae', 'Vue')
+    const handleBtn = () => {
     }
     return {
       msg,
@@ -39,18 +36,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  h1 {
+h1 {
+  display: block;
+  font-size: 40px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+ul {
+  li {
     display: block;
-    font-size: 40px;
-    text-align: center;
+    font-size: 20px;
     padding: 20px 0;
+    text-align: center;
   }
-  ul {
-    li {
-      display: block;
-      font-size: 20px;
-      padding: 20px 0;
-      text-align: center;
-    }
-  }
+}
 </style>
